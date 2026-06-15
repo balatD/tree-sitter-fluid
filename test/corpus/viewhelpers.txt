@@ -1,0 +1,102 @@
+==================
+inline viewhelper
+==================
+
+{f:format.raw(value: foo)}
+
+---
+
+(document
+  (expression
+    (inline_viewhelper
+      name: (viewhelper_name)
+      (arguments
+        (argument
+          name: (argument_name)
+          value: (variable
+            (identifier)))))))
+
+==================
+pipeline
+==================
+
+{foo -> f:format.raw() -> f:format.trim()}
+
+---
+
+(document
+  (expression
+    (variable
+      (identifier))
+    (pipe
+      (inline_viewhelper
+        name: (viewhelper_name)))
+    (pipe
+      (inline_viewhelper
+        name: (viewhelper_name)))))
+
+==================
+tag viewhelper
+==================
+
+<f:if condition="{a}">x</f:if>
+
+---
+
+(document
+  (element
+    (start_tag
+      (tag_name)
+      (attribute
+        (attribute_name)
+        (quoted_attribute_value
+          (expression
+            (variable
+              (identifier))))))
+    (text)
+    (end_tag
+      (tag_name))))
+
+==================
+self closing viewhelper
+==================
+
+<f:image src="{img}" width="200" />
+
+---
+
+(document
+  (element
+    (self_closing_tag
+      (tag_name)
+      (attribute
+        (attribute_name)
+        (quoted_attribute_value
+          (expression
+            (variable
+              (identifier)))))
+      (attribute
+        (attribute_name)
+        (quoted_attribute_value
+          (attribute_value))))))
+
+==================
+custom namespaced tag
+==================
+
+<my_ext:teaser headline="x">y</my_ext:teaser>
+
+---
+
+(document
+  (element
+    (start_tag
+      (tag_name)
+      (attribute
+        (attribute_name)
+        (quoted_attribute_value
+          (attribute_value))))
+    (text)
+    (end_tag
+      (tag_name))))
+

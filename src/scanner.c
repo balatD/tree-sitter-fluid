@@ -81,7 +81,7 @@ static void deserialize(Scanner *scanner, const char *buffer, unsigned length) {
             unsigned iter = 0;
             for (iter = 0; iter < serialized_tag_count; iter++) {
                 Tag tag = tag_new();
-                tag.type = (TagType)buffer[size++];
+                tag.type = (TagType)(uint8_t)buffer[size++];
                 if (tag.type == CUSTOM) {
                     uint16_t name_length = (uint8_t)buffer[size++];
                     array_reserve(&tag.custom_tag_name, name_length);
@@ -332,7 +332,7 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
     return false;
 }
 
-void *tree_sitter_fluid_external_scanner_create() {
+void *tree_sitter_fluid_external_scanner_create(void) {
     Scanner *scanner = (Scanner *)ts_calloc(1, sizeof(Scanner));
     return scanner;
 }

@@ -1,0 +1,110 @@
+==================
+language constants
+==================
+
+{true} {false} {null} {_all}
+
+---
+
+(document
+  (expression
+    (boolean))
+  (expression
+    (boolean))
+  (expression
+    (null))
+  (expression
+    (special_variable)))
+
+==================
+object accessors and index
+==================
+
+{foo} {foo.bar} {arr.0}
+
+---
+
+(document
+  (expression
+    (variable
+      (identifier)))
+  (expression
+    (variable
+      (identifier)
+      (identifier)))
+  (expression
+    (variable
+      (identifier)
+      (number))))
+
+==================
+cast
+==================
+
+{foo as boolean}
+
+---
+
+(document
+  (expression
+    (variable
+      (identifier))
+    (cast
+      (type))))
+
+==================
+operators and ternary
+==================
+
+{a > b ? x : y} {foo ?: bar} {!foo}
+
+---
+
+(document
+  (expression
+    (variable
+      (identifier))
+    (operator)
+    (variable
+      (identifier))
+    (ternary
+      (variable
+        (identifier))
+      (variable
+        (identifier))))
+  (expression
+    (variable
+      (identifier))
+    (ternary
+      (variable
+        (identifier))))
+  (expression
+    (unary
+      (operator)
+      (variable
+        (identifier)))))
+
+==================
+math
+==================
+
+{foo + 5} {a * b - c}
+
+---
+
+(document
+  (expression
+    (variable
+      (identifier))
+    (operator)
+    (number))
+  (expression
+    (variable
+      (identifier))
+    (operator)
+    (variable
+      (identifier))
+    (operator)
+    (variable
+      (identifier))))
+

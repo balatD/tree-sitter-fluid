@@ -297,7 +297,7 @@ static TagType tag_type_for_name(const String *tag_name) {
     return CUSTOM;
 }
 
-static inline Tag tag_new() {
+static inline Tag tag_new(void) {
     Tag tag;
     tag.type = END_;
     tag.custom_tag_name = (String) array_new();

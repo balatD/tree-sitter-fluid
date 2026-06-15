@@ -30,7 +30,15 @@
             "named": true
           },
           {
+            "type": "null",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "special_variable",
             "named": true
           },
           {
@@ -339,6 +347,10 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -348,6 +360,10 @@
         },
         {
           "type": "pipe",
+          "named": true
+        },
+        {
+          "type": "special_variable",
           "named": true
         },
         {
@@ -453,7 +469,15 @@
             "named": true
           },
           {
+            "type": "null",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "special_variable",
             "named": true
           },
           {
@@ -619,7 +643,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "special_variable",
           "named": true
         },
         {
@@ -658,11 +690,19 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
         {
           "type": "operator",
+          "named": true
+        },
+        {
+          "type": "special_variable",
           "named": true
         },
         {
@@ -690,6 +730,10 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -760,10 +804,6 @@
     "named": false
   },
   {
-    "type": "_all",
-    "named": false
-  },
-  {
     "type": "argument_name",
     "named": true
   },
@@ -822,7 +862,7 @@
   },
   {
     "type": "null",
-    "named": false
+    "named": true
   },
   {
     "type": "number",
@@ -838,6 +878,10 @@
   },
   {
     "type": "raw_text",
+    "named": true
+  },
+  {
+    "type": "special_variable",
     "named": true
   },
   {

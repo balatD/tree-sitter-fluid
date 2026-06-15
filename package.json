@@ -1,0 +1,20 @@
+{
+  "name": "tree-sitter-fluid",
+  "version": "0.0.1",
+  "description": "TYPO3 Fluid grammar for tree-sitter",
+  "license": "MIT",
+  "author": "Dragan Balatinac",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balatD/tree-sitter-fluid.git"
+  },
+  "keywords": ["tree-sitter", "parser", "fluid", "typo3"],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.26.9"
+  }
+}

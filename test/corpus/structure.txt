@@ -1,0 +1,58 @@
+==================
+namespace declaration
+==================
+
+{namespace foo=Vendor\Pkg\ViewHelpers}
+
+---
+
+(document
+  (expression
+    (namespace_definition
+      (namespace)
+      (php_class))))
+
+==================
+array literal
+==================
+
+{0: foo, key: bar, "q": baz}
+
+---
+
+(document
+  (expression
+    (array
+      (pair
+        key: (number)
+        value: (variable
+          (identifier)))
+      (pair
+        key: (array_key)
+        value: (variable
+          (identifier)))
+      (pair
+        key: (string)
+        value: (variable
+          (identifier))))))
+
+==================
+dynamic tag name
+==================
+
+<{headline}>x</{headline}>
+
+---
+
+(document
+  (element
+    (dynamic_start_tag
+      (expression
+        (variable
+          (identifier))))
+    (text)
+    (dynamic_end_tag
+      (expression
+        (variable
+          (identifier))))))
+

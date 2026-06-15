@@ -147,6 +147,8 @@ module.exports = grammar({
       $.unary,
       $.inline_viewhelper,
       $.boolean,
+      $.null,
+      $.special_variable,
       $.number,
       $.string,
       $.expression,
@@ -166,9 +168,12 @@ module.exports = grammar({
     arguments: $ => seq($.argument, repeat(seq(',', $.argument)), optional(',')),
     argument: $ => seq(field('name', alias($.identifier, $.argument_name)), ':', field('value', $._value)),
 
-    boolean: _ => choice('true', 'false', 'null', '_all'),
+    boolean: _ => choice('true', 'false'),
+    null: _ => 'null',
+    special_variable: _ => '_all', // Fluid's {_all} (all template variables)
     number: _ => token(/-?\d+(\.\d+)?/),
-    variable: $ => prec.left(seq($.identifier, repeat(seq('.', choice($.identifier, /\d+/))))),
+    // Numeric path/array indices ({arr.0}) are exposed as `number` nodes.
+    variable: $ => prec.left(seq($.identifier, repeat(seq('.', choice($.identifier, alias(token(/\d+/), $.number)))))),
     identifier: _ => /[A-Za-z_][A-Za-z0-9_]*/,
 
     // Strings are single tokens (robust); interpolation inside them is not

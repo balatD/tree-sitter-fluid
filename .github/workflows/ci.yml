@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g tree-sitter-cli@0.26.9
+      # Committed generated sources must match a fresh generate (Zed builds them).
+      - name: Generated sources are up to date
+        run: |
+          tree-sitter generate
+          git diff --exit-code src/parser.c src/grammar.json src/node-types.json
+      - name: Corpus tests
+        run: tree-sitter test
