@@ -15,7 +15,7 @@
     "license": "MIT",
     "description": "TYPO3 Fluid grammar for tree-sitter",
     "links": {
-      "repository": "https://github.com/your-org/tree-sitter-fluid"
+      "repository": "https://github.com/balatD/tree-sitter-fluid"
     }
   },
   "bindings": {

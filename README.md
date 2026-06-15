@@ -6,7 +6,7 @@ ViewHelpers, pipelines (`->`), casts (`as`), arrays, `{namespace ...}` and
 dynamic tag names (`<{var}>`). ViewHelper *tags* (`<f:if>`, `<f:format.raw>`) are
 regular elements whose tag name carries a `:`.
 
-Used by the [TYPO3 Fluid Zed extension](https://github.com/your-org/zed-typo3-fluid).
+Used by the [TYPO3 Fluid Zed extension](https://github.com/balatD/zed-typo3-fluid).
 
 ## Known limitations
 - Interior of single-quoted strings is not separately tokenized.
