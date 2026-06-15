@@ -1,0 +1,25 @@
+{
+  "grammars": [
+    {
+      "name": "fluid",
+      "scope": "text.html.fluid",
+      "path": ".",
+      "file-types": ["fluid.html", "fluid"],
+      "injection-regex": "^fluid$",
+      "highlights": ["queries/highlights.scm"],
+      "injections": ["queries/injections.scm"]
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "TYPO3 Fluid grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/your-org/tree-sitter-fluid"
+    }
+  },
+  "bindings": {
+    "c": false, "go": false, "node": false, "python": false,
+    "rust": false, "swift": false, "zig": false
+  }
+}
