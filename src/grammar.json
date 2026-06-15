@@ -960,7 +960,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[A-Za-z][A-Za-z0-9]*:[A-Za-z][A-Za-z0-9]*(\\.[A-Za-z][A-Za-z0-9]*)*"
+        "value": "[A-Za-z_][A-Za-z0-9_]*:[A-Za-z_][A-Za-z0-9_]*(\\.[A-Za-z_][A-Za-z0-9_]*)*"
       }
     },
     "arguments": {

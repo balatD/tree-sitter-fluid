@@ -162,7 +162,7 @@ module.exports = grammar({
       optional($.arguments),
       ')',
     ),
-    viewhelper_name: _ => token(/[A-Za-z][A-Za-z0-9]*:[A-Za-z][A-Za-z0-9]*(\.[A-Za-z][A-Za-z0-9]*)*/),
+    viewhelper_name: _ => token(/[A-Za-z_][A-Za-z0-9_]*:[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*/),
     arguments: $ => seq($.argument, repeat(seq(',', $.argument)), optional(',')),
     argument: $ => seq(field('name', alias($.identifier, $.argument_name)), ':', field('value', $._value)),
 
